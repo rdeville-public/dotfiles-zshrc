@@ -1,7 +1,7 @@
 # Project Specific Gitignore
 
 .vimrc.local
-.tmuxinator.yml
+.tmux*.y*ml
 .old/
 .tmp/
 .undodir
