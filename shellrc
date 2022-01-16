@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+
+main()
+{
+  local plugin_dir="${SHELL_DIR}/plugin"
+  local completion_dir="${SHELL_DIR}/completion"
+  local private_dir="${SHELL_DIR}/private"
+  local lib_dir="${SHELL_DIR}/lib"
+  local host_dir="${SHELL_DIR}/hosts"
+  local HOST
+
+  export PROMPT_DIR="${SHELL_DIR}/lib/prompt"
+
+  if [[ -z "${SHELL}" ]]
+  then
+    export SHELL="bash"
+  else
+    case "${SHELL}" in
+      *zsh*)
+        SHELL="zsh"
+        ;;
+      *)
+        SHELL="bash"
+        ;;
+    esac
+  fi
+
+  date_init_first="$(date +%S%N)"
+
+  OLD_SHELL="${SHELL}"
+  SHELL="bash"
+  source "${SHELL_DIR}/lib/prompt/prompt.sh"
+  SHELL="${OLD_SHELL}"
+
+  #for i_cat in "${completion_dir}" "${lib_dir}" "${plugin_dir}"
+  for i_cat in "${lib_dir}" "${plugin_dir}"
+  do
+    if [[ "${i_cat}" == "${completion_dir}" ]]
+    then
+      ext=${SHELL}
+    else
+      ext=sh
+    fi
+
+    for i_file in "${i_cat}"/*."${ext}"
+    do
+      # shellcheck disable=SC1090
+      # SC1090: Can't follow non-constant source. Use a directive to specify
+      #         location.
+      source "${i_file}"
+    done
+  done
+
+  if [[ -d "${private_dir}" ]] && [[ $(ls -al "${private_dir}" | wc -l ) -ne 0 ]]
+  then
+    for iPrivate in "${private_dir}"/*.sh
+    do
+      # shellcheck disable=SC1090
+      # SC1090: Can't follow non-constant source. Use a directive to specify
+      #         location.
+      source "${iPrivate}"
+    done
+  fi
+
+  #date_end="$(( ( date +%S%N - date_init_first ) / 1000000 ))"
+  #echo "Sourcing all in ${date_end}ms"
+
+  if command -v neofetch > /dev/null 2>&1 && [[ -z "${VIRTUAL_ENV}" ]]
+  then
+    neofetch
+  fi
+
+  if [[ "${SHELL}" == "bash" ]]
+  then
+    source "${XDG_CONFIG_HOME:-${HOME}/.config}/shell/bashrc"
+  elif [[ "${SHELL}" == "zsh" ]]
+  then
+    source "${XDG_CONFIG_HOME:-${HOME}/.config}/shell/zshrc"
+  fi
+}
+
+# Ensure no SHELL variable propagation when call bash from zsh and vice-versa.
+if ! [[ "$0" =~ ${SHELL} ]]
+then
+  SHELL=$0
+fi
+
+export SHELL_DIR="${HOME}/.config/shell"
+export EDITOR="nvim"
+export PROMPT_VERSION=2
+export PATH="$PATH:$HOME/.rvm/bin"
+export LESS='-R'
+export LESSOPEN='|~/.lessfilter %s'
+
+eval "$( dircolors "${SHELL_DIR}/LS_COLORS" )"
+
+export FZF_DEFAULT_OPTS="\
+  --preview-window right:60% \
+  --layout reverse \
+  --margin=1,4 \
+  --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+
+alias sz="source ${HOME}/.zshrc"
+
+#export SSH_ASKPASS="/usr/bin/ssh-askpass"
+
+main
+
+# *****************************************************************************
+# EDITOR CONFIG
+# vim: ft=sh
+# *****************************************************************************
