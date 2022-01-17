@@ -201,7 +201,7 @@ then
     done
   }
 
-  gitignore-reload()
+  gitignore_reload()
   {
     # The .gitignore file should not be reloaded if there are uncommited changes.
     # Firstly, require a clean work tree. The - name: require_clean_work_tree()

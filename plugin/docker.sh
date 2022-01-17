@@ -13,33 +13,33 @@ if command -v docker > /dev/null
 then
   # METHOD
   # ===========================================================================
-  docker-remove-most-recent-container()
+  docker_remove_most_recent_container()
   {
     docker ps -ql | xargs docker rm
   }
 
-  docker-remove-most-recent-image()
+  docker_remove_most_recent_image()
   {
     docker images -q | head -1 | xargs docker rmi
   }
 
-  docker-remove-stale-assets()
+  docker_remove_stale_assets()
   {
     docker ps --filter status=exited -q | xargs docker rm --volumes
     docker images --filter dangling=true -q | xargs docker rmi
   }
 
-  docker-enter()
+  docker_enter()
   {
     docker exec -it "$@" /bin/bash
   }
 
-  docker-cleanup(){
+  docker_cleanup(){
     docker rm $(docker ps -a -q)
     docker rmi $(docker images -q)
   }
 
-  docker-remove-images()
+  docker_remove_images()
   {
     if [ -z "$1" ]; then
       docker rmi "$(docker images -q)"
@@ -56,7 +56,7 @@ then
     fi
   }
 
-  docker-image-dependencies()
+  docker_image_dependencies()
   {
     if hash dot 2>/dev/null; then
       OUT=$(mktemp -t docker-viz-XXXX.png)
@@ -74,12 +74,12 @@ then
     fi
   }
 
-  docker-runtime-environment()
+  docker_runtime_environment()
   {
     docker run "$@" env
   }
 
-  docker-archive-content()
+  docker_archive_content()
   {
     if [ -n "$1" ]; then
       tar -xzOf "$1" manifest.json | jq '[.[] | .RepoTags] | add'
@@ -114,17 +114,17 @@ then
   # Delete all Docker containers
   alias dkrmall='docker rm $(docker ps -a -q)'
   # Delete most recent (i.e., last) Docker container
-  alias dkrmlc='docker-remove-most-recent-container'
+  alias dkrmlc='docker_remove_most_recent_container'
   # Delete all untagged images and exited containers
-  alias dkrmall='docker-remove-stale-assets'
+  alias dkrmall='docker_remove_stale_assets'
   # Delete most recent (i.e., last) Docker image
-  alias dkrmli='docker-remove-most-recent-image'
+  alias dkrmli='docker_remove_most_recent_image'
   # Delete images for supplied IDs or all if no IDs are passed as arguments
-  alias dkrmi='docker-remove-images'
+  alias dkrmi='docker_remove_images'
   # Output a graph of image dependencies using Graphiz
-  alias dkideps='docker-image-dependencies'
+  alias dkideps='docker_image_dependencies'
   # List environmental variables of the supplied image ID
-  alias dkre='docker-runtime-environment'
+  alias dkre='docker_runtime_environment'
   # Enter last container (works with Docker 1.3 and above)
   alias dkelc='docker exec -it $(dklcid) bash --login'
   alias dkrmflast='docker rm -f $(dklcid)'

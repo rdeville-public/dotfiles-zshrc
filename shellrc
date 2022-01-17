@@ -87,10 +87,11 @@ fi
 
 export SHELL_DIR="${HOME}/.config/shell"
 export EDITOR="nvim"
-export PROMPT_VERSION=2
 export PATH="$PATH:$HOME/.rvm/bin"
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
+export PROMPT_VERSION=2
+#export PROMPT_DEBUG_LEVEL="DEBUG"
 
 eval "$( dircolors "${SHELL_DIR}/LS_COLORS" )"
 
