@@ -115,7 +115,7 @@ alias la='ls -a'
 alias lla='ls -al'
 alias l1='ls -1'
 # grep overload
-alias grep='grep --color=auto --exclude-dir={.bzr,.git,.hg,.svn}'
+alias grep='grep --color=auto'
 # clear shortcut
 alias c='clear'
 alias k='clear'
