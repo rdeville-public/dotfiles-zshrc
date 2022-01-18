@@ -11,7 +11,7 @@ zsh_syntax_highlighting=(
 )
 
 zsh_autosuggestion=(
-  "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
   "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 )
 
