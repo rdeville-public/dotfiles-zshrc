@@ -9,7 +9,7 @@ main()
   local host_dir="${SHELL_DIR}/hosts"
   local HOST
 
-  export PROMPT_DIR="${SHELL_DIR}/lib/prompt"
+  export PROMPT_DIR="${XDG_CONFIG_HOME:-"${HOME}/.config"}/prompt"
 
   if [[ -z "${SHELL}" ]]
   then
@@ -29,7 +29,7 @@ main()
 
   OLD_SHELL="${SHELL}"
   SHELL="bash"
-  source "${SHELL_DIR}/lib/prompt/prompt.sh"
+  source "${PROMPT_DIR}/prompt.sh"
   SHELL="${OLD_SHELL}"
 
   #for i_cat in "${completion_dir}" "${lib_dir}" "${plugin_dir}"
