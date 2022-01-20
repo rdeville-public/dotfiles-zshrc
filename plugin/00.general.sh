@@ -89,6 +89,17 @@ clrz()
   ps -eal | awk '{ if ($2 == "Z") {print $4}}' | kill -9
 }
 
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[45;93m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+
+    command man "$@"
+}
+
 # ALIAS
 # =============================================================================
 # ls overload
@@ -150,13 +161,6 @@ fi
 
 # sudo overload and utility
 alias _='sudo'
-if [[ "$(whoami)" != root ]]
-then
-  # Alias to reboot to avoid typing sudo
-  alias reboot='sudo reboot'
-  # Alias to poweroff to avoid typing sudo
-  alias poweroff='sudo poweroff'
-fi
 
 # Clear all cache files and system
 alias ccache='sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"'

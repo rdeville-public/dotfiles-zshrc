@@ -250,6 +250,17 @@ then
     fi
   }
 
+  gpat()
+  {
+    git push --all
+    git push --tags
+    if git config --get remote.upstream.url | grep -q 'rdeville.public'
+    then
+      git push upstream --all
+      git push upstream --tags
+    fi
+  }
+
   # ALIAS
   # ===========================================================================
   if [[ "${OSTYPE}" =~ darwin* ]]
@@ -282,7 +293,6 @@ then
   alias gpp='git pull && git push'
   alias gup='git fetch && git rebase'
   alias gp='git push'
-  alias gpat='git push --all; git push --tags'
   alias gr='git remote'
   alias grv='git remote -v'
   alias gra='git remote add'
