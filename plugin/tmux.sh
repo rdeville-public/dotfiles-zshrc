@@ -15,14 +15,22 @@ then
   # ===========================================================================
   alias ta='tmux attach -t'
   alias ts='tmux switch-client -t'
-  alias tad='tmux attach -d -t'
-  #alias tl='tmux list-sessions'
+  alias tls='tmux list-sessions'
   alias tksv='tmux kill-server'
   alias tkss='tmux kill-session -t'
 
   if command -v tmuxp &> /dev/null
   then
     alias tl="tmuxp load"
+    alias tld="tmuxp load ./"
+    case "${SHELL}" in
+      *zsh*)
+        source <(_TMUXP_COMPLETE=zsh_source tmuxp)
+        ;;
+      *)
+        source <(_TMUXP_COMPLETE=source tmuxp)
+        ;;
+    esac
   fi
 
   txl(){

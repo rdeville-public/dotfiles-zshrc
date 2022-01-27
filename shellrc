@@ -25,6 +25,14 @@ main()
     esac
   fi
 
+  if [[ "${SHELL}" == "bash" ]]
+  then
+    source "${XDG_CONFIG_HOME:-${HOME}/.config}/shell/bashrc"
+  elif [[ "${SHELL}" == "zsh" ]]
+  then
+    source "${XDG_CONFIG_HOME:-${HOME}/.config}/shell/zshrc"
+  fi
+
   date_init_first="$(date +%S%N)"
 
   OLD_SHELL="${SHELL}"
@@ -68,14 +76,6 @@ main()
   if command -v neofetch > /dev/null 2>&1 && [[ -z "${VIRTUAL_ENV}" ]]
   then
     neofetch
-  fi
-
-  if [[ "${SHELL}" == "bash" ]]
-  then
-    source "${XDG_CONFIG_HOME:-${HOME}/.config}/shell/bashrc"
-  elif [[ "${SHELL}" == "zsh" ]]
-  then
-    source "${XDG_CONFIG_HOME:-${HOME}/.config}/shell/zshrc"
   fi
 }
 
