@@ -109,7 +109,9 @@ main(){
 
       if [[ -e "${dest}" ]] && ! [[ -L "${dest}" ]]
       then
-        shell_log "ERROR" "Bootstrap: Something already exists for **${dest/${HOME}/\~}**."
+        shell_log "WARNING" "Bootstrap: Something already exists for **${dest/${HOME}/\~}**."
+        shell_log "WARNING" "Bootstrap: Backing up to **${dest/${HOME}/\~}.bak**."
+        mv "${dest}" "${dest}.bak"
       elif ! [[ -L "${dest}" ]]
       then
         shell_log "INFO" "Bootstrap: Create symlink to **${dest/${HOME}/\~}**."

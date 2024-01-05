@@ -26,6 +26,12 @@ then
   bind '"\eOB":history-search-forward'
   # Forward history search
   bind '"\e[B":next-history'
+  # Show Ambiguous
+  bind 'set show-all-if-ambiguous on'
+  # Ignore case
+  bind 'set completion-ignore-case on'
+  # Use tab and shift tab in completion
+  bind 'TAB:menu-complete'
 fi
 
 # *****************************************************************************

@@ -47,7 +47,7 @@ main()
     then
       ext=${SHELL}
     else
-      ext=sh
+      ext="sh"
     fi
 
     for i_file in "${i_cat}"/*."${ext}"
@@ -79,6 +79,20 @@ main()
   fi
 }
 
+if command -v tmux &> /dev/null \
+  && [ -n "$PS1" ] \
+  && [[ ! "$TERM" =~ screen ]] \
+  && [[ ! "$TERM" =~ tmux ]] \
+  && [ -z "$TMUX" ]
+then
+  if command -v tmuxp &> /dev/null
+  then
+    exec tmuxp load -y ~/.tmuxp.yml
+  else
+    exec tmux
+  fi
+fi
+
 # Ensure no SHELL variable propagation when call bash from zsh and vice-versa.
 if ! [[ "$0" =~ ${SHELL} ]]
 then
@@ -87,11 +101,16 @@ fi
 
 export SHELL_DIR="${HOME}/.config/shell"
 export EDITOR="nvim"
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.local/share/bin:$HOME/.local/bin:$PATH:$HOME/.rvm/bin"
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 export PROMPT_VERSION=2
-#export PROMPT_DEBUG_LEVEL="DEBUG"
+# export PROMPT_DEBUG_LEVEL="DEBUG"
+export SHELL_APP="alacritty"
+export TERM="alacritty"
+export GNUPGHOME=${XDG_DATA_HOME}/gnupg
+export GPG_TTY=$(tty)
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 eval "$( dircolors "${SHELL_DIR}/LS_COLORS" )"
 
