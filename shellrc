@@ -80,14 +80,14 @@ main()
 }
 
 if command -v tmux &> /dev/null \
-  && [ -n "$PS1" ] \
+  && [[ -n "$PS1" ]] \
   && [[ ! "$TERM" =~ screen ]] \
   && [[ ! "$TERM" =~ tmux ]] \
-  && [ -z "$TMUX" ]
+  && [[ -z "$TMUX" ]]
 then
   if command -v tmuxp &> /dev/null
   then
-    exec tmuxp load -y ~/.tmuxp.yml
+    exec tmuxp load -y "${TMUXP_CONFIG:-home}"
   else
     exec tmux
   fi
@@ -110,6 +110,7 @@ export SHELL_APP="alacritty"
 export TERM="alacritty"
 export GNUPGHOME=${XDG_DATA_HOME}/gnupg
 export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 eval "$( dircolors "${SHELL_DIR}/LS_COLORS" )"
@@ -126,7 +127,9 @@ alias sz="source ${HOME}/.zshrc"
 
 main
 
-# *****************************************************************************
-# EDITOR CONFIG
+complete -C /usr/bin/terraform terraform
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
 # vim: ft=sh
-# *****************************************************************************
