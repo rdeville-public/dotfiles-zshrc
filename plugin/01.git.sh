@@ -322,7 +322,7 @@ then
   alias gstb='git stash branch'
   alias gstd='git stash drop'
   alias gstl='git stash list'
-  alias gh='cd "$(git rev-parse --show-toplevel)"'
+  # alias gh='cd "$(git rev-parse --show-toplevel)"'
   alias gls='git ls-files . --exclude-standard'
 
 fi
