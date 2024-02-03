@@ -101,7 +101,7 @@ fi
 
 export SHELL_DIR="${HOME}/.config/shell"
 export EDITOR="nvim"
-export PATH="$HOME/.local/share/bin:$HOME/.local/bin:$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.local/share/bin:$HOME/.local/bin:$PATH"
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 export PROMPT_VERSION=2
