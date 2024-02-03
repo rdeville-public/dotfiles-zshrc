@@ -37,6 +37,8 @@ CONFIG_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}"
 declare -A LINKS
 LINKS["${HOME}/.zshrc"]="${SCRIPTPATH}/shellrc"
 LINKS["${HOME}/.bashrc"]="${SCRIPTPATH}/shellrc"
+LINKS["${HOME}/.bash_profile"]="${SCRIPTPATH}/profile"
+LINKS["${HOME}/.profile"]="${SCRIPTPATH}/profile"
 
 declare -A CRONS
 # CRONS["<PATH|CMD>"]="<RECURRENCE>"
