@@ -1,97 +1,85 @@
-<!-- markdownlint-disable MD041 MD002 -->
-<div align="center" style="text-align: center;">
+<!-- BEGIN DOTGIT-SYNC BLOCK MANAGED -->
+# 👋 Welcome to ZSH Config
 
-  <!-- Project Title -->
-  <a href="https://framagit.org/rdeville.public/my_dotfiles/shell">
-    <img src="docs/assets/img/meta/shell_logo.png" width="100px">
-    <h1>Shell</h1>
-  </a>
+<center>
 
-  <!-- Project Badges -->
-  [![License][license_badge]][license]
-  [![Build Status][build_status_badge]][build_status]
+> ⚠️ IMPORTANT !
+>
+> Main repo is on [framagit.org](https://framagit.org/rdeville-public/dotfiles/shell).
+>
+> On other online git platforms, they are just mirror of the main repo.
+>
+> Any issues, pull/merge requests, etc., might not be considered on those other
+> platforms.
 
---------------------------------------------------------------------------------
+</center>
 
-TODO: Short description as written in `docs/_data/repo.yaml`
+---
 
---------------------------------------------------------------------------------
+<center>
 
-  <b>
-IMPORTANT !
+[![Licenses: (MIT OR BEERWARE)][license_badge]][license_url]
+[![Changelog][changelog_badge]][changelog_badge_url]
+[![Build][build_badge]][build_badge_url]
+[![Release][release_badge]][release_badge_url]
 
-Main repo is on [ Framagit][repo_url].<br>
-On other online git platforms, they are just mirror of the main repo.<br>
-Any issues, pull/merge requests, etc., might not be considered on those other
-platforms.
-  </b>
-</div>
+</center>
 
---------------------------------------------------------------------------------
+[build_badge]: https://framagit.org/rdeville-public/dotfiles/shell/badges/main/pipeline.svg
+[build_badge_url]: https://framagit.org/rdeville-public/dotfiles/shell/-/commits/main
+[release_badge]: https://framagit.org/rdeville-public/dotfiles/shell/-/badges/release.svg
+[release_badge_url]: https://framagit.org/rdeville-public/dotfiles/shell/-/releases/
+[license_badge]: https://img.shields.io/badge/Licenses-MIT%20OR%20BEERWARE-blue
+[license_url]: https://framagit.org/rdeville-public/dotfiles/shell/blob/main/LICENSE
+[changelog_badge]: https://img.shields.io/badge/Changelog-Python%20Semantic%20Release-yellow
+[changelog_badge_url]: https://github.com/python-semantic-release/python-semantic-release
 
-[repo_url]: https://framagit.org/rdeville.public/my_dotfiles/shell
-[license_badge]: https://img.shields.io/badge/License-MIT%2FBeer%20Ware-blue?style=flat-square&logo=open-source-initiative
-[license]: LICENSE
-[build_status_badge]: https://framagit.org/rdeville.public/my_dotfiles/shell/badges/master/pipeline.svg?style=flat-square&logo=appveyor
-[build_status]: https://framagit.org/rdeville.public/my_dotfiles/shell/commits/master
+Dotfiles which store my ZSH setup without any framework (such as omz, while
+inspired from them).
+Bash support has been dropped lately.
 
-## Table of Content
+---
+<!-- BEGIN DOTGIT-SYNC BLOCK EXCLUDED CUSTOM_README -->
+<!-- YOU CAN REPLACE THIS COMMENT AND PUT CUSTOM CONTENT HERE -->
+<!-- YOUR CUSTOM CONTENT WILL NOT BE OVERRIDDEN -->
 
-  * [Project Documentation](#project-documentation)
+## 📌 Prerequisites
 
-<!-- BEGIN MKDOCS TEMPLATE -->
-<!--
-     WARNING, DO NOT UPDATE CONTENT BETWEEN MKDOCS TEMPLATE TAG !
-     Modified content will be overwritten when updating
--->
+## ⚙️ Install
 
-## Project Documentation
+## 🚀 Usage
 
-The complete documentation of the project can be accessed via its [Online
-Documentation][online_doc].
+## ✅ Run tests
 
-If, for any reason, the link to the [Online Documentation][online_doc] is
-broken, you can generate its documention locally on your computer (since the
-documentation is jointly stored within the repository).
+<!-- END DOTGIT-SYNC BLOCK EXCLUDED CUSTOM_README -->
+## 🤝 Contributing
 
-To do so, you will need the following requirements:
+Contributions, issues and feature requests are welcome!
 
-  * Python >= 3.8
-  * Pip3 with Python >= 3.8
+Feel free to check [issues page][issues_pages].
 
-First setup a temporary python virtual environment and activate it:
+You can also take a look at the [CONTRIBUTING.md][contributing].
 
-```bash
-# Create the temporary virtual environment
-python3 -m venv .temporary_venv
-# Activate it
-source .temporary_venv/bin/activate
-```
+[issues_pages]: https://framagit.org/rdeville-public/dotfiles/shell/-/issues
+[contributing]: https://framagit.org/rdeville-public/dotfiles/shell/blob/main/CONTRIBUTING.md
 
-Now, install required dependencies to render the documentation using
-[mkdocs][mkdocs] in the python virtual environment:
+## 👤 Maintainers
 
-```bash
-pip3 install -r requirements.docs.txt
-```
+* 📧 [**Romain Deville** \<code@romaindeville.fr\>](mailto:code@romaindeville.fr)
+  * Website: [https://romaindeville.fr](https://romaindeville.fr)
+  * Github: [@rdeville](https://github.com/rdeville)
+  * Gitlab: [@r.deville](https://gitlab.com/r.deville)
+  * Framagit: [@rdeville](https://framagit.org/rdeville)
 
-Now you can easily render the documentation using [mkdocs][mkdocs] through the
-usage of the following command (some logs will be outputed to stdout):
+## 📝 License
 
-```bash
-# Assuming you are at the root of the repo
-# If there is a `mkdocs.local.yml`
-mkdocs serve -f mkdocs.local.yml
-# If there is no `mkdocs.local.yml`, only `mkdocs.yml`
-mkdocs serve
-```
+Copyright © 2022 - 2024 [Romain Deville](code@romaindeville.fr)
 
-You can now browse the full documentation by visiting
-[http://localhost:8000][localhost].
+This project is under following licenses (**OR**) :
 
-[localhost]: https://localhost:8000
-[mkdocs]: https://www.mkdocs.org/
+* [MIT][main_license]
+* [BEERWARE][beerware_license]
 
-<!-- END MKDOCS TEMPLATE -->
-
-[online_doc]: https://docs.romaindeville.fr/rdeville.public/my_dotfiles/shell/index.html
+[main_license]: https://framagit.org/rdeville-public/dotfiles/shell/blob/main/LICENSE
+[beerware_license]: https://framagit.org/rdeville-public/dotfiles/shell/blob/main/LICENSE.BEERWARE
+<!-- END DOTGIT-SYNC BLOCK MANAGED -->
