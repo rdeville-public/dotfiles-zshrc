@@ -14,8 +14,8 @@ dotgit:
 
 # Repos description and template usage configuration
 # ------------------------------------------------------------------------------
-name: DirenvRC
-slug: direnv
+name: ZSH Config
+slug: shellrc
 description: |-
   Dotfiles which store my ZSH setup without any framework (such as omz, while
   inspired from them).
