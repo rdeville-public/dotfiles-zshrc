@@ -7,8 +7,7 @@ self: {
   ...
 }: let
   cfg = config.zshrc;
-in
-{
+in {
   options = {
     zshrc = {
       enable = lib.mkEnableOption "Activate ZSH module to install dotfiles";
@@ -20,13 +19,6 @@ in
       configFile = {
         zsh = {
           source = lib.mkDefault self.packages.${pkgs.stdenv.hostPlatform.system}.default;
-        };
-      };
-    };
-    home ={
-      file = {
-        ".profile" ={
-          text = "source '${self.packages.${pkgs.stdenv.hostPlatform.system}.default}/profile'";
         };
       };
     };

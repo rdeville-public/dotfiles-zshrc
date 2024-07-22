@@ -11,7 +11,7 @@ export SAVEHIST=50000
 # Avoid duplica
 export HISTCONTROL=ignoredups:erasedups
 # History file
-[[ -z "$HISTFILE" ]] && HISTFILE=${HOME}/.cache/zsh/zsh_history
+export HISTFILE=${HOME}/.cache/zsh/zsh_history
 
 # OPTIONS
 # =============================================================================

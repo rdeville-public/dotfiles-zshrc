@@ -17,14 +17,15 @@ export SHELL="$(which zsh)"
 systemctl --user import-environment DISPLAY
 
 if [[ "$(hostname)" == "rey" ]]; then
-	export WINIT_X11_SCALE_FACTOR=2
+  export WINIT_X11_SCALE_FACTOR=2
 fi
 
 # GUI
 # -----------------------------------------------------------------------------
-# If screen is can be graphical, run xserver
+# If screen can be graphical, run xserver
 if systemctl -q is-active graphical.target &&
-	[[ -z "${DISPLAY}" ]] &&
-	[[ "${XDG_VTNR}" -eq 1 ]]; then
-	startx
+  [[ -z "${DISPLAY}" ]]; then
+  # Uncomment below condition to only start xserver on first tty
+  # && [[ "${XDG_VTNR}" -eq 1 ]]; then
+  startx
 fi

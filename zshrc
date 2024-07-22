@@ -26,8 +26,7 @@ if command -v tmux &>/dev/null &&
   fi
 fi
 
-# ZSH_DOT_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/zsh"
-ZSH_DOT_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/shell"
+ZSH_DOT_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/zsh"
 command -v dircolors &>/dev/null && eval "$(dircolors "${ZSH_DOT_DIR}/LS_COLORS")"
 
 source_dir() {
@@ -49,3 +48,5 @@ fi
 
 # DO NOT MOVE IT TO PLUGINS FOLDER TO ENSURE LOADED LAST
 command -v starship &>/dev/null && eval "$(starship init zsh)"
+
+# vim: ft=bash
