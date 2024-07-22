@@ -44,9 +44,7 @@
       "aarch64-darwin"
     ];
     # BEGIN DOTGIT-SYNC BLOCK EXCLUDED NIX_FLAKE_CUSTOM_VARS
-
     # END DOTGIT-SYNC BLOCK EXCLUDED NIX_FLAKE_CUSTOM_VARS
-
   in {
     # TOOLING
     # ========================================================================
