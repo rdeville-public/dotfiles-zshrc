@@ -48,3 +48,5 @@ fi
 
 # DO NOT MOVE IT TO PLUGINS FOLDER TO ENSURE LOADED LAST
 command -v starship &>/dev/null && eval "$(starship init zsh)"
+
+# vim: ft=bash
