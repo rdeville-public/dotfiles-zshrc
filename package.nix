@@ -7,7 +7,6 @@ stdenv.mkDerivation {
     cp -r \
       *.md \
       LICENSE* \
-      LS_COLORS \
       zshrc \
       profile \
       config \

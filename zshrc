@@ -15,19 +15,16 @@ export PATH="$HOME/.local/share/bin:$HOME/.local/bin:$PATH"
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 if command -v tmux &>/dev/null &&
-  [[ -n "$PS1" ]] &&
+  [[ -n "${PS1}" ]] &&
   [[ -z "${VIMRUNTIME}" ]] &&
-  [[ -z "$TMUX" ]] &&
-  [[ ! "$TERM" =~ (screen|tmux) ]]; then
+  [[ -z "${TMUX}" ]] &&
+  [[ ! "${TERM}" =~ (screen|tmux) ]]; then
   if command -v tmuxp &>/dev/null; then
     tmuxp load -y "${TMUXP_CONFIG:-home}"
   else
     tmux
   fi
 fi
-
-ZSH_DOT_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/zsh"
-command -v dircolors &>/dev/null && eval "$(dircolors "${ZSH_DOT_DIR}/LS_COLORS")"
 
 source_dir() {
   local dir=$1
@@ -37,6 +34,7 @@ source_dir() {
   done
 }
 
+ZSH_DOT_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/zsh"
 source_dir "${ZSH_DOT_DIR}/config"
 source_dir "${ZSH_DOT_DIR}/plugins"
 
