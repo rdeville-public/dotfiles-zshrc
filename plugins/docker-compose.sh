@@ -13,6 +13,5 @@ if command -v docker-compose >/dev/null 2>&1; then
 	alias dcodown='docker-compose down'
 	alias dcopull='docker-compose pull'
 	alias dcostart='docker-compose start'
-	alias dcofresh='docker-compose-fresh'
 	alias dcolog='docker-compose logs -f --tail 100'
 fi

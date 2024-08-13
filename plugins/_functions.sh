@@ -18,6 +18,7 @@ ips() {
 		"checkip.dyndns.com"
 		"checkip.dyndns.org"
 	)
+
 	for domain in "${list[@]}"; do
 		if ping -q -c 1 "${domain}" &>/dev/null; then
 			res=$(curl -s "https://${domain}" | grep -Eo '[0-9\.]+')
@@ -31,13 +32,20 @@ bak() {
 	# Make a bak of a file with a timestamp
 	local filename
 	local filetime
+
 	filename=$1
 	filetime=$(date +%Y-%m-%d_%H-%M-%S)
+
 	mv "${filename}" "${filename}_${filetime}.bak"
 }
 
 sortcons() {
 	# Sort connection state
+	if ! command -v netstat &>/dev/null; then
+	  echo "Command \`netstat\` not installed"
+	  return 1
+	fi
+
 	netstat -nat | awk '{print $6}' | sort | uniq -c | sort -rn
 }
 

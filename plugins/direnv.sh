@@ -2,7 +2,6 @@
 
 if command -v direnv >/dev/null 2>&1; then
 	alias da="direnv allow"
-	alias de="direnv edit"
 	alias dr="direnv reload"
 	alias ds="direnv status"
 
