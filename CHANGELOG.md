@@ -1,6 +1,13 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.4.1 (2024-08-24)
+
+### 🩹 Patch
+
+  * ⬆️ Update templated files from dotgit-sync (!4) by Romain Deville ([`6f1cc87`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/6f1cc8763205ad4a2d681f8534aeb3ba0bb91bb9))
+  * ⬆️ Update templated files from dotgit-sync by Dotgit Sync [bot] ([`cc292a9`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/cc292a9c8c832bcb7a39977b267da2bc59a30596))
+
 ## v0.4.0 (2024-08-13)
 
 ### ✨ Minor
@@ -10,6 +17,7 @@
 
 ### 🔊 Others
 
+  * 🔖 v0.4.0 (NO-CI) by Python Semantic Release [bot] ([`e0c265e`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/e0c265ef91855afa9144230ef9871f00d19d171e))
   * 🔥 Remove LS_COLORS as now managed using nix HM by Romain Deville ([`234957d`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/234957dee51a1294a944d81d8f989d703d630fa4)) 🔏
   * 🔥(plugins): Remove unused aliases in plugins by Romain Deville ([`8aff405`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/8aff4055ff1f10c3e78d3257f6cfb006eedad819)) 🔏
 
@@ -51,9 +59,7 @@
 
   * ♻️ Refacto of my main ZSH config by Romain Deville ([`e11b939`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/e11b939ccd639e0e1ef319d683ec42b8d4ad77b9)) 🔏
   * 👷 Update and add gitlab CI from DGS by Romain Deville ([`bdf1472`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/bdf14726069fbf6f73acd9e794308a569117d944)) 🔏
-  * 📄 Update licenses from DGS by Romain Deville ([`41dea15`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/41dea15d7b1a49909ace1b60037d80211b3a0d88)) 🔏
   * 📝 Add CODE_OF_CONDUCT by Romain Deville ([`e55c397`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/e55c397d30f0290c7ef7ed97bab650b719953c44)) 🔏
-  * 📝 Update README.md from DGS by Romain Deville ([`caca573`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/caca5730ef6181141046b37326477dcf783348a1)) 🔏
   * 🔖 v0.2.0 (NO-CI) by Python Semantic Release [bot] ([`acd4a21`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/acd4a217dc90aa62efe761a1525865fd02a7eb69))
   * 🔨 Add devbox configuration by Romain Deville ([`6e21ef8`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/6e21ef80fe4507f67b5a76470627fcecd426a870)) 🔏
   * 🔨 Add pre-commit config by Romain Deville ([`faba9c7`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/faba9c748437d44d94cb650adcd5b21c1399d11d)) 🔏
@@ -70,7 +76,6 @@
   * ✨🐛 Update tmux alias and source {ba,z}shrc earlier by Romain Deville ([`1337366`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/1337366fbadf85e47e5eeb30c6c3ef406fbb8ae7)) 🔏
   * ✨ Add colored man, remove power alias &amp; update gpat by Romain Deville ([`03c73db`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/03c73dbc37ae2de985ed5f9abe0e3a92f712150a)) 🔏
   * ✨ Update fasd plugin by Romain Deville ([`1b68c85`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/1b68c857055d516b5a0943a138d5f1c80799eaea)) 🔏
-  * ✨ Move prompt outside of shell dir &amp; fix minor bug by Romain Deville ([`83aaeef`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/83aaeefd0a6153e9b0cd85c0b919faa367dcb996)) 🔏
 
 ### 🩹 Patch
 
@@ -83,4 +88,3 @@
 
   * ♻️ Refacto by Romain Deville ([`d84f708`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/d84f7082c5b4129cfe91bd67a0c5d9c00683bedc)) 🔏
   * 🔥 Remove exclude-dir from grep option by Romain Deville ([`ae02d2e`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/ae02d2e128ef86744a12f41143398c2a6dcb57cf)) 🔏
-  * 🔥 Remove prompt submodule by Romain Deville ([`12aff69`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/12aff693b4f9fbb30e59e601c9c618e78adafe8c)) 🔏
