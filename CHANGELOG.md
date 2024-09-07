@@ -1,6 +1,13 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.4.3 (2024-09-07)
+
+### 🩹 Patch
+
+  * ⬆️ Update templated files from dotgit-sync (!7) by Romain Deville ([`a6c059c`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/a6c059c4713eea57143c6b77b7f022648860ae90))
+  * ⬆️ Update templated files from dotgit-sync by Dotgit Sync [bot] ([`045b5a4`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/045b5a47e1f93b1e74d6fd716b59c1d5cca2a06e))
+
 ## v0.4.2 (2024-08-27)
 
 ### 🩹 Patch
@@ -13,6 +20,7 @@
   * 👷 Update Gitlab CI from DGS template by Romain Deville ([`cf47948`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/cf47948324a265f66aa52d75d457c69e68c6e8ad)) 🔏
   * 💚 Fix CI from DGS Template (!5) by Romain Deville ([`d2c16d5`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/d2c16d5d5577e408f51dee7fa576b615539a2c49))
   * 💚 Fix CI from DGS Template by Romain Deville ([`bcd8abb`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/bcd8abbcba43e8e86d89d048ebdd1c6dcfcbfbe0)) 🔏
+  * 🔖 v0.4.2 (NO-CI) by Python Semantic Release [bot] ([`bfcb2ac`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/bfcb2acff116f958095d2eefe20f04629b686e7c))
 
 ## v0.4.1 (2024-08-24)
 
@@ -69,8 +77,6 @@
   * 🔧 Add editorconfig by Romain Deville ([`0aba043`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/0aba043ade410f18181fd8c6b2a81ad8f78b97a1)) 🔏
   * 🔧 Add python-semantic-release config by Romain Deville ([`c43acac`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/c43acace805dbb486278d2d53d70bbf06767cf9a)) 🔏
   * 🔧 Add markdownlint config by Romain Deville ([`517c1ad`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/517c1ad2ae4744d391ca1d8d6e882cb6928aa427)) 🔏
-  * 🔧 Add commitlint configuration by Romain Deville ([`d0c3f13`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/d0c3f134614d8b26e49713e14f72d220bfb68a20)) 🔏
-  * 🔧 Add cspell configuration by Romain Deville ([`3f29f29`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/3f29f29c838331c686d7fc74f2262a932cacdcc8)) 🔏
 
 ### 🔊 Others
 
@@ -88,13 +94,11 @@
   * ✨ Update git plugin and add terraform plugin by Romain Deville ([`57bc6cd`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/57bc6cd13b9af634615b49a73832dc21e270ee7b)) 🔏
   * ✨ Update bootstrap.sh by Romain Deville ([`f30f0db`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/f30f0db5f6ccc95a37984115d7f63f878f4702ad)) 🔏
   * ✨🐛 Update tmux alias and source {ba,z}shrc earlier by Romain Deville ([`1337366`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/1337366fbadf85e47e5eeb30c6c3ef406fbb8ae7)) 🔏
-  * ✨ Add colored man, remove power alias &amp; update gpat by Romain Deville ([`03c73db`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/03c73dbc37ae2de985ed5f9abe0e3a92f712150a)) 🔏
 
 ### 🩹 Patch
 
   * ⚡️ Improve start tmux when loggin by Romain Deville ([`14038ad`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/14038ad11e58a46eca96f94dc87ba979bbbb0727)) 🔏
   * ⚡️ Upgrade bootstrap to setup.sh by Romain Deville ([`52dc58b`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/52dc58b815429000d5cd0e09713e3eb6704bd1a3)) 🔏
-  * 🔧 Update tmux alias by Romain Deville ([`8a3d2b7`](https://framagit.org/rdeville-public/dotfiles/shell/-/commit/8a3d2b739b6f9caa51d0158acbf9624e8a0463b0)) 🔏
 
 ### 🔊 Others
 
