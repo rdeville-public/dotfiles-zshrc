@@ -10,6 +10,9 @@ if command -v kubectl >/dev/null 2>&1; then
 	alias kak='kubectl apply -k'
 	# into an interactive terminal on a container
 	alias keti='kubectl exec -ti'
+	# Shortcuts
+	alias kg='kubectl get'
+	alias kd='kubectl describe'
 	# Pod management.
 	alias kgp='kubectl get pods'
 	alias kgpw='kgp --watch'
