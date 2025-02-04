@@ -61,6 +61,7 @@ if command -v git >/dev/null 2>&1; then
   alias gpl='git pull'
   alias gup='git fetch && git rebase'
   alias gp='git push'
+  alias gpf='git push --force-with-lease'
   alias gr='git remote -v'
   alias gra='git remote add'
   alias gd='git diff'
