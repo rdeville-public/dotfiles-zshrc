@@ -8,20 +8,11 @@
   '';
 
   inputs = {
-    # Stable Nix Packages
     nixpkgs = {
-      url = "nixpkgs/nixos-24.05";
-      # url = "github:nixos/nixpkgs/nixos-unstable";
-    };
-    # Flake Utils Lib
-    utils = {
-      url = "github:numtide/flake-utils";
-    };
-    alejandra = {
-      url = "github:kamadorueda/alejandra";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "nixpkgs/nixos-unstable";
     };
   };
+
   outputs = inputs @ {self, ...}: let
     pkgsForSystem = system:
       import inputs.nixpkgs {
@@ -40,25 +31,25 @@
   in {
     # TOOLING
     # ========================================================================
-    # Formatter for your nix files, available through 'nix fmt'
-    # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (
       system:
-        inputs.alejandra.defaultPackage.${system}
+        (pkgsForSystem system).alejandra
     );
+
+    # PACKAGES
+    # ========================================================================
+    packages = forAllSystems (system: rec {
+      zshrc = with (pkgsForSystem system);
+        callPackage ./package.nix {};
+      default = zshrc;
+    });
+
+    # HOME MANAGER MODULES
+    # ========================================================================
     homeManagerModules = {
       shellrc = import ./modules/home-manager.nix self;
     };
     homeManagerModule = self.homeManagerModules.shellrc;
 
-    # Exemple of package
-    overlays.default = final: prev: {
-      zshrc = final.callPackage ./package.nix {};
-    };
-    packages = forAllSystems (system: rec {
-      zshrc = with import inputs.nixpkgs {inherit system;};
-        callPackage ./package.nix {};
-      default = zshrc;
-    });
   };
 }
